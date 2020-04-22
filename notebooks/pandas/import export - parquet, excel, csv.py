@@ -31,6 +31,7 @@ def file_name(extension: str) -> str:
 
 
 # %%
+pd.np.random.seed(0)
 tu.N = 5
 d = tu.makeDataFrame().set_index('A')
 d
@@ -106,25 +107,31 @@ d.shape
 # ## Write
 
 # %%
-# %time d.to_parquet(parquet_file)
+# %%time
+d.to_parquet(parquet_file)
 
 # %%
-# %time d.to_excel(excel_file)
+# %%time
+d.to_excel(excel_file)
 
 # %%
-# %time d.to_csv(csv_file)
+# %%time
+d.to_csv(csv_file)
 
 # %% [markdown]
 # ## Read
 
 # %%
-# %time __ = pd.read_parquet(parquet_file)
+# %%time
+__ = pd.read_parquet(parquet_file)
 
 # %%
-# %time __ = pd.read_excel(excel_file)
+# %%time
+__ = pd.read_excel(excel_file)
 
 # %%
-# %time __ = pd.read_csv(csv_file)
+# %%time
+__ = pd.read_csv(csv_file)
 
 # %% [markdown]
 # ## Size
