@@ -26,6 +26,17 @@
 # %matplotlib qt
 
 # %% [markdown]
+# ### Load and use line profiler
+#
+# Requirements: `conda install line_profiler`
+
+# %%
+# %load_ext line_profiler
+
+# %%
+# %lprun -f function_to_profile function_to_call()
+
+# %% [markdown]
 # ### Switch to inline mode (closes the interactive figure!)
 
 # %%
