@@ -183,7 +183,7 @@ def expand(data: pd.DataFrame, custom_columns: dict = None, sep: str = '_', dept
                 _expand_column(data, name, lambda column: column.tolist(), custom_columns, sep)
             )
 
-        remaining_columns = data[set(data.columns) - (list_columns | dict_columns)]
+        remaining_columns = data[frozenset(set(data.columns) - (list_columns | dict_columns))]  # set is not hashable
         new_columns.append(remaining_columns)
         data = pd.concat(new_columns, axis=1)
 
